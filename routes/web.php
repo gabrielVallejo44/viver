@@ -35,5 +35,5 @@ Route::get('/miCasa', [casaController::class, 'sacarCasa']);
 Route::post('/miCasa', [casaController::class, 'agregarCasa'])->name('agregarCasa');
 
 
-
+Route::get('/peticiones', [peticionesController::class, 'sacarPeticiones']);
 Route::get('/agregarPeticion', [peticionesController::class, 'agregarPeticion'])->name('agregarPeticion');

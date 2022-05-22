@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\peticiones;
+Use App\Models\usuario;
 class peticionesController extends Controller
 {
     public function sacarPeticiones(){
         $receptor=session('usuario');
-        $peticionesAux = usuario::where('receptor', $receptor->id);
+        $peticionesAux = peticiones::where('receptor', $receptor->id)->get();
         $peticiones=array();
         foreach($peticionesAux as $peticionAux){
             $peticion=new peticiones; //REVISAR PORQUE AQUÍ SE LLAMA PETICIONES Y NO PETICION EL MODELO
@@ -18,7 +19,9 @@ class peticionesController extends Controller
             $peticion->receptor=$peticionAux->receptor;
             array_push($peticiones, $peticion);
         }
-        //HACER REDIRECT
+        
+        session(['peticiones' => $peticiones]);
+        return view('peticiones');
     }
     public function agregarPeticion(Request $request){
         $emisor=session('usuario');

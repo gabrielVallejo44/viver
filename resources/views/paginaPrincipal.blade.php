@@ -13,7 +13,12 @@
             #cajaFotoPerfil{
                 width: 50px;
             }
-            
+            body {
+                height:665px;
+                background-image: url("\Storage\fondo1.png");
+                background-size: 10rem;
+  
+            }
            
         </style>
     </head>
@@ -21,7 +26,7 @@
         <nav  class="navbar navbar-expand-lg navbar-light p-3 bg-dark"  id="menu">
             <div class="container-fluid">
               <div id="cajaImagen">
-                  <img class="w-100" src="img/logo.png" alt="">
+                  {{-- <img class="w-100" src="Storage/logo.png" alt=""> --}}
               </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,6 +39,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-white" href="/miCasa">Mi casa</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="/peticiones">Peticiones</a>
                   </li>
                   
                 </ul>
